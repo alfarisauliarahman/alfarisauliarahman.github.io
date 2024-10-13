@@ -141,15 +141,6 @@
             background-image: url('https://i.postimg.cc/9cmdFhbV/Gambar-Whats-App-2024-08-20-pukul-12-37-20-49fc1978-COLLAGE-1.jpg');
             background-size: cover;
         }
-
-        /* Halaman terakhir dengan foto */
-        #page11 {
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
     </style>
 </head>
 <body>
@@ -277,7 +268,7 @@
     <section id="page9" class="page">
         <div class="centered">
             <p>nih kado untuk kamu.</p>
-            <iframe id="video-frame" src="https://player.vimeo.com/video/1019171202" frameborder="0" allowfullscreen></iframe>
+            <iframe id="video-frame" src="https://streamable.com/e/8wxf3y" frameborder="0" allowfullscreen></iframe>
             <p class="underline" onclick="nextPage()">haha maaf ya😁</p>
         </div>
         <div class="nav-arrows">
@@ -291,19 +282,10 @@
         <div class="centered">
             <p>kadonya nanti pas kita main yaa.</p>
             <img src="https://i.scdn.co/image/ab67656300005f1f282e395b2013d5d44ce74241" alt="Foto Kado">
-            <p class="underline" onclick="nextPage()">tambahan, tolong kecilkan volumenya...</p>
         </div>
         <div class="nav-arrows">
             <span class="arrow" onclick="prevPage()">←</span>
             <span class="arrow" onclick="nextPage()">→</span>
-        </div>
-    </section>
-
-    <!-- Halaman Akhir -->
-    <section id="page11" class="page">
-        <div class="centered">
-            <img src="https://pbs.twimg.com/media/GN_ZWnnboAAK3vn?format=jpg&name=large" alt="Foto Halaman Akhir" style="width: 80%; max-width: 600px;">
-            <p><strong>semangat ngelaprak dan nugas dari dosennya ya kak😇😇😇😇</strong></p>
         </div>
     </section>
 
@@ -317,16 +299,10 @@
         <source src="https://od.lk/s/M18zMDk1MDM4MjFf/only.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Backsound Halaman Akhir (Once) -->
-    <audio id="earrape-music">
-        <source src="https://od.lk/s/M18zMDk1MDM5NjZf/earrape.mp3" type="audio/mpeg">
-    </audio>
-
     <script>
         let currentPage = 1;
         const birthdayMusic = document.getElementById('birthday-music');
         const onlyMusic = document.getElementById('only-music');
-        const earrapeMusic = document.getElementById('earrape-music');
         const videoFrame = document.getElementById('video-frame');
 
         function nextPage() {
@@ -336,8 +312,6 @@
             currentPage++;
             const nextElement = document.getElementById(`page${currentPage}`);
             nextElement.classList.add('active');
-            
-            console.log('Navigating to page', currentPage);
 
             // Pindahkan "14 Oktober 2024" ke pojok kiri atas saat halaman 3 dan tetap hingga halaman 7
             if (currentPage >= 3 && currentPage <= 7) {
@@ -347,7 +321,7 @@
             // Backsound halaman 1-7
             if (currentPage <= 7) {
                 birthdayMusic.currentTime = 5;  // Mulai dari detik ke-5
-                birthdayMusic.play(); // Melanjutkan musik
+                birthdayMusic.play();
                 onlyMusic.pause();
             }
 
@@ -368,13 +342,6 @@
             if (currentPage === 10) {
                 onlyMusic.play();
             }
-
-            // Halaman terakhir, putar earrape sekali
-            if (currentPage === 11) {
-                onlyMusic.pause();
-                earrapeMusic.play();
-                earrapeMusic.loop = false;  // Putar hanya sekali
-            }
         }
 
         function prevPage() {
@@ -385,8 +352,6 @@
                 currentPage--;
                 const prevElement = document.getElementById(`page${currentPage}`);
                 prevElement.classList.add('active');
-
-                console.log('Navigating to page', currentPage);
 
                 // Kembalikan posisi "14 Oktober 2024" ke pojok kiri atas jika kembali ke halaman 3-7
                 if (currentPage >= 3 && currentPage <= 7) {
