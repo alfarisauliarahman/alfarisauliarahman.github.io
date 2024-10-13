@@ -28,6 +28,7 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
+            opacity: 0;
             transition: opacity 1s ease;
         }
 
@@ -63,9 +64,11 @@
             margin-top: 20px;
         }
 
-        video {
+        iframe {
             width: 90%;
             max-width: 400px;
+            height: 225px;
+            margin-top: 20px;
         }
 
         .emoji {
@@ -104,18 +107,64 @@
         }
 
         .letter-content {
-            font-size: 1.5em;
+            font-size: 1.2em;
             color: #333;
             background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
+            padding: 10px 20px;
             border-radius: 15px;
             margin-bottom: 20px;
+            text-align: justify;
+            max-height: 70vh;
+            overflow-y: scroll;
         }
 
-        /* Halaman 8 khusus dengan background gambar baru */
-        #page8 {
-            background-image: url('https://i.postimg.cc/Z5QBVXXD/Gambar-Whats-App-2024-08-20-pukul-12-37-20-49fc1978-COLLAGE-1.jpg');
+        /* Efek transisi perpindahan "14 Oktober 2024" */
+        #date-transition {
+            font-size: 2em;
+            color: #333;
+            position: relative;
+            transition: all 1s ease;
+        }
+
+        /* Posisi 14 Oktober 2024 di pojok kiri atas pada halaman ketiga dan tetap hingga halaman 7 */
+        #date-transition.move-to-corner {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5em;
+        }
+
+        /* Halaman 8 dengan latar belakang khusus */
+        #page8,
+        #page9,
+        #page10 {
+            background-image: url('https://i.postimg.cc/9cmdFhbV/Gambar-Whats-App-2024-08-20-pukul-12-37-20-49fc1978-COLLAGE-1.jpg');
             background-size: cover;
+        }
+
+        #page11 {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Foto di halaman terakhir */
+        #page11 img {
+            width: 80%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        /* Kalimat di halaman terakhir */
+        #page11 p {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -134,7 +183,7 @@
     <!-- Halaman 2 -->
     <section id="page2" class="page">
         <div class="centered">
-            <p class="message">14 Oktober 2024,<br><span class="underline" onclick="nextPage()">Mutia Ulang Tahun?</span></p>
+            <p id="date-transition" class="message">14 Oktober 2024,<br><span class="underline" onclick="nextPage()">Mutia Ulang Tahun?</span></p>
         </div>
         <div class="nav-arrows">
             <span class="arrow" onclick="prevPage()">←</span>
@@ -145,6 +194,7 @@
     <!-- Halaman 3 -->
     <section id="page3" class="page">
         <div class="centered">
+            <p id="date-transition" class="message move-to-corner">14 Oktober 2024</p>
             <p class="message underline" onclick="nextPage()">Mutia Ulang Tahun?</p>
         </div>
         <div class="nav-arrows">
@@ -156,6 +206,7 @@
     <!-- Halaman 4 -->
     <section id="page4" class="page">
         <div class="centered">
+            <p id="date-transition" class="message move-to-corner">14 Oktober 2024</p>
             <p class="message underline" onclick="nextPage()">Wah, Mutia Ulang Tahun?!</p>
         </div>
         <div class="nav-arrows">
@@ -167,6 +218,7 @@
     <!-- Halaman 5 -->
     <section id="page5" class="page">
         <div class="centered">
+            <p id="date-transition" class="message move-to-corner">14 Oktober 2024</p>
             <p class="message underline" onclick="nextPage()">oke serius.</p>
         </div>
         <div class="nav-arrows">
@@ -178,6 +230,7 @@
     <!-- Halaman 6 -->
     <section id="page6" class="page">
         <div class="centered">
+            <p id="date-transition" class="message move-to-corner">14 Oktober 2024</p>
             <p class="message underline" onclick="nextPage()">Mutia's Birthday!</p>
         </div>
         <div class="nav-arrows">
@@ -189,6 +242,7 @@
     <!-- Halaman 7 -->
     <section id="page7" class="page">
         <div class="centered">
+            <p id="date-transition" class="message move-to-corner">14 Oktober 2024</p>
             <p class="message">Selamat Ulang Tahun, Mutia!</p>
             <span class="emoji" onclick="nextPage()">📩</span>
         </div>
@@ -201,7 +255,37 @@
     <!-- Halaman 8 (Surat Ucapan) -->
     <section id="page8" class="page">
         <div class="centered">
-            <p class="letter-content">Mutia, semoga di hari ulang tahunmu ini kamu mendapatkan banyak kebahagiaan dan keberkahan... [isi surat panjang]</p>
+            <p class="letter-content">
+                Today its your birthday?! Woah (pura-pura gktw)<br>
+                Selamat ulang tahun, Mutia! my lovely girlfriend. <br>cie tua, ups.
+                <br><br>
+                Maaf hanya bisa buat kayak gini :( jujur aku nyiapin ini agak takut sebenernya, 
+                karena ini bisa dibilang flat, gaada spesial-spesialnya sama sekali, gak terlalu berwarna juga karena aku masih belum paham sama UI/UX untuk tampilannya.
+                but i tried my best, right?! coba-coba belajar HTML, CSS, (javascript makai chatgpt aja, aku gapaham 😭) baca dokumentasi sampai pusing, biar bisa buat website kayak gini, walaupun masih sederhana banget :( bener-bener from the scratch... masih dibantu chatgpt juga sih karena BANYAK BGT YANG GA JALAN KODENYA????😭😭😭😭akhirnya aku merasakan menjadi programmer yang kodenya gak jalan-jalan padahal kesalahannya sepele☹️ pemula sih haha.
+                <br><br>
+                Maaf aku gabisa ngerayain ultah kamu dari dekat, ya terhalang jarak 12 jam. Maaf juga ga nyiapin kado sama sekali (mksdnya bkn ga nyiapin, tapi gabisa ngasih sekarang), nanti ya pas kita ketemu😉aku maunya pas ketemu langsung😁. Sebagai gantinya, aku mau kamu sebutin permintaan apa yang kamu inginkan. Sebisa mungkin aku jalanin.
+                Atau mungkin ada kata-kata... entah itu untuk dirimu sendiri, atau untuk aku.
+                <br><br>
+                Di umur yang ke-18 ini, aku berharap kamu bisa jadi pribadi yang lebih baik lagi dari sebelumnya, sehat-sehat (ak tau km stress sm praktikum😭), dikelilingi orang baik, dapat apa yang kamu inginkan, dan berharap kamu menemukan kebahagiaan; hari ini, besok, dan kedepannya. Jadilah Mutia yang bisa buat dirinya sendiri bahagia dan bangga dengan usahanya (bahkan hal sekecil apapun), dan aku; sebagai pacarnya. Kamu udah bertahan sampai sekarang aja udah keren banget kok!🫂🫂🫂🫂
+                Jauhin hal yang ga baik, baik itu untuk dirimu sendiri, maupun orang lain.
+                POLA MAKANNYA TOLONG DIJAGA :)
+                TUGASNYA TOLONG JANGAN DIKERJAIN TENGAH MALAM TERUS :)
+                <br><br>
+                Kurang-kurangin insecurenya juga, apalagi ke aku; pas vc. Gausah mikirin apa-apa kalau dgn aku, atau ngejauhin muka mu dari kamera, serius. kau selalu cantik di mata awk.
+                Jangan terlalu mikirin pandangan/kata-kata orang lain yang bisa bikin kamu merasa insecure. Fokus sama diri mu sendiri, selagi itu gak merugikan orang lain. Gapapa bgt kalau kamu mau merawat diri, tapi jangan sampai kata-kata orang lain memengaruhi kamu ya, apalagi sampai bikin kamu pola hidupnya terganggu.
+                <br><br>
+                Ngeluh tentang kehidupan gapapa. Sangat amat boleh banget keluh kesah ke aku, cerita-cerita. Ya hidup emang gak selalu jalan sesuai harapan, sih.
+                <br><br>
+                Kurang-kurangin juga bikin aku sedih. Gausah dijelasin lagi, baca aja chat ku yg panjang lebar itu. Dengerin juga apa kata-kata ku, jangan iya-iya aja😠 dilakuin.
+                <br><br>
+                Make yourself proud, make me proud, and believe you'll get what you want.
+                I'm always proud of you. Be the best version of yourself, okay?
+                <br><br>
+                Aku selalu berada di sisi mu.
+                Peluk jauh untukmu!
+                <br><br>
+                Sekali lagi, selamat ulang tahun, sayang!
+            </p>
             <p class="underline" onclick="nextPage()">kado!</p>
         </div>
         <div class="nav-arrows">
@@ -214,9 +298,7 @@
     <section id="page9" class="page">
         <div class="centered">
             <p>nih kado untuk kamu.</p>
-            <video controls>
-                <source src="https://v16m-default.akamaized.net/b9fbc367b49006fd3f5de74b712e0425/670943d9/video/tos/maliva/tos-maliva-v-0068c799-us/2306aa60368540fd8993e237348c747c/?a=0&bti=bGRuZHxvMXIxcm53Zm1cYF9ebWFzaHFmOg%3D%3D&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=1624&bt=812&cs=0&ds=6&ft=aEKpCqT0majPD12ZqVjJ3wUOx5EcMeF~O5&mime_type=video_mp4&qs=13&rc=MzNkZ2c6ZmU2ZjMzZzczNEBpMzNkZ2c6ZmU2ZjMzZzczNEBkZWdjcjRnMDRgLS1kMS9zYSNkZWdjcjRnMDRgLS1kMS9zcw%3D%3D&vvpl=1&l=202410110927121EF8C78C64BA7F087048&btag=e00048000&cc=3" type="video/mp4">
-            </video>
+            <iframe id="video-frame" src="https://player.vimeo.com/video/1019171202" frameborder="0" allowfullscreen></iframe>
             <p class="underline" onclick="nextPage()">haha maaf ya😁</p>
         </div>
         <div class="nav-arrows">
@@ -230,6 +312,7 @@
         <div class="centered">
             <p>kadonya nanti pas kita main yaa.</p>
             <img src="https://i.scdn.co/image/ab67656300005f1f282e395b2013d5d44ce74241" alt="Foto Kado">
+            <p class="underline" onclick="nextPage()">tambahan, tolong kecilkan volumenya...</p>
         </div>
         <div class="nav-arrows">
             <span class="arrow" onclick="prevPage()">←</span>
@@ -237,52 +320,114 @@
         </div>
     </section>
 
-    <!-- Backsound (Gunakan file audio yang bisa diputar langsung) -->
-    <audio id="backsound" loop>
-        <source src="https://www.example.com/path-to-audio-file.mp3" type="audio/mpeg">
+    <!-- Halaman Terakhir -->
+    <section id="page11" class="page">
+        <div class="centered">
+            <img src="https://pbs.twimg.com/media/GN_ZWnnboAAK3vn?format=jpg&name=large" alt="Foto Terakhir">
+            <p><strong>semangat ngelaprak dan nugas dari dosennya ya kak😇😇😇😇</strong></p>
+        </div>
+    </section>
+
+    <!-- Backsound Halaman 1-7 -->
+    <audio id="birthday-music" loop>
+        <source src="https://od.lk/s/M18zMDk1MDM4MThf/Happy%20Birthday%20on%20classical%20guitar%20%28simple%29.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Backsound Halaman 8-10 -->
+    <audio id="only-music" loop>
+        <source src="https://od.lk/s/M18zMDk1MDM4MjFf/only.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Lagu Earrape Halaman Terakhir -->
+    <audio id="earrape-music">
+        <source src="https://od.lk/s/M18zMDk1MDM5NjZf/earrape.mp3" type="audio/mpeg">
     </audio>
 
     <script>
         let currentPage = 1;
-        const backsound = document.getElementById('backsound');
+        const birthdayMusic = document.getElementById('birthday-music');
+        const onlyMusic = document.getElementById('only-music');
+        const earrapeMusic = document.getElementById('earrape-music');
+        const videoFrame = document.getElementById('video-frame');
 
         function nextPage() {
-            document.getElementById(`page${currentPage}`).classList.remove('active');
+            const currentElement = document.getElementById(`page${currentPage}`);
+            currentElement.classList.remove('active');
+
             currentPage++;
-            document.getElementById(`page${currentPage}`).classList.add('active');
+            const nextElement = document.getElementById(`page${currentPage}`);
+            nextElement.classList.add('active');
 
-            // Backsound dimulai di halaman 8
+            // Pindahkan "14 Oktober 2024" ke pojok kiri atas saat halaman 3 dan tetap hingga halaman 7
+            if (currentPage >= 3 && currentPage <= 7) {
+                document.getElementById('date-transition').classList.add('move-to-corner');
+            }
+
+            // Backsound halaman 1-7
+            if (currentPage <= 7) {
+                birthdayMusic.currentTime = 5;  // Mulai dari detik ke-5
+                birthdayMusic.play();
+                onlyMusic.pause();
+                earrapeMusic.pause();
+            }
+
+            // Backsound halaman 8-10
             if (currentPage === 8) {
-                backsound.volume = 0;
-                backsound.play();
-                fadeIn(backsound, 1000); // Fade in 1 detik
+                fadeIn(onlyMusic, 2000); // Fade in 2 detik
+                birthdayMusic.pause();
+                onlyMusic.play();
             }
 
-            // Pause backsound di halaman 9
+            // Pause musik di halaman 9 dan video
             if (currentPage === 9) {
-                backsound.pause();
+                onlyMusic.pause();
+                videoFrame.src = videoFrame.src;  // Reset video untuk pause
             }
 
-            // Putar kembali backsound di halaman 10 (atau halaman setelahnya)
+            // Putar kembali musik di halaman 10
             if (currentPage === 10) {
-                backsound.play();
+                onlyMusic.play();
+            }
+
+            // Lagu earrape hanya sekali di halaman terakhir
+            if (currentPage === 11) {
+                onlyMusic.pause();
+                earrapeMusic.play();
             }
         }
 
         function prevPage() {
             if (currentPage > 1) {
-                document.getElementById(`page${currentPage}`).classList.remove('active');
-                currentPage--;
-                document.getElementById(`page${currentPage}`).classList.add('active');
+                const currentElement = document.getElementById(`page${currentPage}`);
+                currentElement.classList.remove('active');
 
-                // Putar backsound jika kembali ke halaman 8
-                if (currentPage === 8) {
-                    backsound.play();
+                currentPage--;
+                const prevElement = document.getElementById(`page${currentPage}`);
+                prevElement.classList.add('active');
+
+                // Kembalikan posisi "14 Oktober 2024" ke pojok kiri atas jika kembali ke halaman 3-7
+                if (currentPage >= 3 && currentPage <= 7) {
+                    document.getElementById('date-transition').classList.add('move-to-corner');
                 }
 
-                // Pause backsound jika kembali ke halaman 9
+                // Backsound halaman 1-7
+                if (currentPage <= 7) {
+                    birthdayMusic.currentTime = 5;  // Mulai dari detik ke-5
+                    birthdayMusic.play();
+                    onlyMusic.pause();
+                    earrapeMusic.pause();
+                }
+
+                // Backsound halaman 8-10
+                if (currentPage === 8) {
+                    fadeIn(onlyMusic, 2000);
+                    onlyMusic.play();
+                }
+
+                // Pause musik di halaman 9 dan video
                 if (currentPage === 9) {
-                    backsound.pause();
+                    onlyMusic.pause();
+                    videoFrame.src = videoFrame.src;  // Reset video untuk pause
                 }
             }
         }
