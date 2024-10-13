@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Mutia!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=SF+Pro:wght@400;500&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'SF Pro', sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .page {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        .page.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .underline {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .number {
+            font-size: 8em;
+            color: #ff6f61;
+            cursor: pointer;
+        }
+
+        .message {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .centered {
+            text-align: center;
+            padding: 20px;
+        }
+
+        img {
+            width: 90%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        video {
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .emoji {
+            font-size: 3em;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .emoji:hover {
+            transform: scale(1.3);
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .emoji:active {
+            transform: scale(1.5);
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 12px;
+        }
+
+        .nav-arrows {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .arrow {
+            font-size: 2em;
+            cursor: pointer;
+            color: #333;
+            padding: 0 20px;
+        }
+
+        .letter-content {
+            font-size: 1.5em;
+            color: #333;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Halaman 8 khusus dengan background gambar */
+        #page8 {
+            background-image: url('https://cdn.discordapp.com/attachments/812939679736659999/1294239737896370258/AP1GczOvy_y0WBMdPGhwZUnaMRfTN-zwEDJUK-x5o32ocIo-52aPDZBlzRDrLww550-h979-s-no-gm.png?ex=670a4a2f&is=6708f8af&hm=9a996d9502c44ef131107579e68fab305137b68e057333bb7d3307866c8b0ae9&');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Halaman 1 -->
+    <section id="page1" class="page active">
+        <div class="centered">
+            <h1 class="number" id="number-18" onclick="nextPage()">18</h1>
+        </div>
+        <div class="nav-arrows">
+            <span class="arrow" onclick="prevPage()">←</span>
+            <span class="arrow" onclick="nextPage()">→</span>
+        </div>
+    </section>
+
+    <!-- Halaman 2 -->
+    <section id="page2" class="page">
+        <div class="centered">
+            <p class="message">14 Oktober 2024,<br><span class="underline" onclick="nextPage()">Mutia Ulang Tahun?</span></p>
+        </div>
+        <div class="nav-arrows">
+            <span class="arrow" onclick="prevPage()">←</span>
+            <span class="arrow" onclick="nextPage()">→</span>
+        </div>
+    </section>
+
+    <!-- Halaman 3 -->
+    <section id="page3" class="page">
+        <div class="centered">
+            <p class="message underline" onclick="nextPage()">Mutia Ulang Tahun?</p>
+        </div>
+        <div class="nav-arrows">
+            <span class="arrow" onclick="prevPage()">←</span>
+            <span class="arrow" onclick="nextPage()">→</span>
+        </div>
+    </section>
+
+    <!-- Halaman 4 -->
+    <section id="page4" class="page">
+        <div class="centered">
+            <p class="message underline" onclick="nextPage()">Wah, Mutia Ulang Tahun?!</p>
+        </div>
+        <div class="nav-arrows">
+            <span class="arrow" onclick="prevPage()">←</span>
+            <span class="arrow" onclick="nextPage()">→</span>
+        </div>
+    </section>
+
+    <!-- Halaman 5 -->
+    <section id="page5" class="page">
+        <div class="centered">
+            <p class="message underline" onclick="nextPage()">oke serius.</p>
+        </div>
+        <div class="nav-arrows">
+            <span class="arrow" onclick="prevPage()">←</span>
+            <span class="arrow" onclick="nextPage()">→</span>
+        </div>
+    </section>
+
+    <!-- Halaman 6 -->
+    <section id="page6" class="page">
+        <div class="centered">
+            <p class="message underline" onclick="nextPage()">Mutia's Birthday!</p>
+        </div>
+        <div class="nav-arrows">
+            <span class="arrow" onclick="prevPage()">←</span>
+            <span class="arrow" onclick="nextPage()">→</span>
+        </div>
+    </section>
+
+    <!-- Halaman 7 -->
+    <section id="page7" class="page">
+        <div class="centered">
+            <p class="message">Selamat Ulang Tahun, Mutia!</p>
+            <span class="emoji" onclick="nextPage()">📩</span>
+        </div>
+        <div class="nav-arrows">
+            <span class="arrow" onclick="prevPage()">←</span>
+            <span class="arrow" onclick="nextPage()">→</span>
+        </div>
+    </section>
+
+    <!-- Halaman 8 (Surat Ucapan) -->
+    <section id="page8" class="page">
+        <div class="centered">
+            <p class="letter-content">Mutia, semoga di hari ulang tahunmu ini kamu mendapatkan banyak kebahagiaan dan keberkahan... [isi surat panjang]</p>
+            <p class="underline" onclick="nextPage()">kado!</p>
+        </div>
+        <div class="nav-arrows">
+            <span class="arrow" onclick="prevPage()">←</span>
+            <span class="arrow" onclick="nextPage()">→</span>
+        </div>
+    </section>
+
+    <!-- Halaman 9 (Video Kado) -->
+    <section id="page9" class="page">
+        <div class="centered">
+            <p>nih kado untuk kamu.</p>
+            <video controls>
+                <source src="https://v16m-default.akamaized.net/b9fbc367b49006fd3f5de74b712e0425/670943d9/video/tos/maliva/tos-maliva-v-0068c799-us/2306aa60368540fd8993e237348c747c/?a=0&bti=bGRuZHxvMXIxcm53Zm1cYF9ebWFzaHFmOg%3D%3D&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=1624&bt=812&cs=0&ds=6&ft=aEKpCqT0majPD12ZqVjJ3wUOx5EcMeF~O5&mime_type=video_mp4&qs=13&rc=MzNkZ2c6ZmU2ZjMzZzczNEBpMzNkZ2c6ZmU2ZjMzZzczNEBkZWdjcjRnMDRgLS1kMS9zYSNkZWdjcjRnMDRgLS1kMS9zcw%3D%3D&vvpl=1&l=202410110927121EF8C78C64BA7F087048&btag=e00048000&cc=3" type="video/mp4">
+            </video>
+            <p class="underline" onclick="nextPage()">haha maaf ya😁</p>
+        </div>
+        <div class="nav-arrows">
+            <span class="arrow" onclick="prevPage()">←</span>
+            <span class="arrow" onclick="nextPage()">→</span>
+        </div>
+    </section>
+
+    <!-- Halaman 10 (Foto Kado) -->
+    <section id="page10" class="page">
+        <div class="centered">
+            <p>kadonya nanti pas kita main yaa.</p>
+            <img src="https://i.scdn.co/image/ab67656300005f1f282e395b2013d5d44ce74241" alt="Foto Kado">
+        </div>
+        <div class="nav-arrows">
+            <span class="arrow" onclick="prevPage()">←</span>
+            <span class="arrow" onclick="nextPage()">→</span>
+        </div>
+    </section>
+
+    <!-- Backsound (Gunakan file audio yang bisa diputar langsung) -->
+    <audio id="backsound" loop>
+        <source src="https://www.example.com/path-to-audio-file.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        let currentPage = 1;
+        const backsound = document.getElementById('backsound');
+
+        function nextPage() {
+            document.getElementById(`page${currentPage}`).classList.remove('active');
+            currentPage++;
+            document.getElementById(`page${currentPage}`).classList.add('active');
+
+            // Backsound dimulai di halaman 8
+            if (currentPage === 8) {
+                backsound.volume = 0;
+                backsound.play();
+                fadeIn(backsound, 1000); // Fade in 1 detik
+            }
+
+            // Pause backsound di halaman 9
+            if (currentPage === 9) {
+                backsound.pause();
+            }
+
+            // Putar kembali backsound di halaman 10 (atau halaman setelahnya)
+            if (currentPage === 10) {
+                backsound.play();
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                document.getElementById(`page${currentPage}`).classList.remove('active');
+                currentPage--;
+                document.getElementById(`page${currentPage}`).classList.add('active');
+
+                // Putar backsound jika kembali ke halaman 8
+                if (currentPage === 8) {
+                    backsound.play();
+                }
+
+                // Pause backsound jika kembali ke halaman 9
+                if (currentPage === 9) {
+                    backsound.pause();
+                }
+            }
+        }
+
+        function fadeIn(element, duration) {
+            let volume = 0;
+            const increment = 0.01;
+
+            const interval = setInterval(() => {
+                if (volume < 1) {
+                    volume += increment;
+                    element.volume = volume;
+                } else {
+                    clearInterval(interval);
+                }
+            }, duration / 100);
+        }
+
+        document.getElementById('page1').classList.add('active');
+    </script>
+</body>
+</html>
