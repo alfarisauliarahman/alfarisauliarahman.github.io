@@ -141,31 +141,6 @@
             background-image: url('https://i.postimg.cc/9cmdFhbV/Gambar-Whats-App-2024-08-20-pukul-12-37-20-49fc1978-COLLAGE-1.jpg');
             background-size: cover;
         }
-
-        #page11 {
-            background-color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Foto di halaman terakhir */
-        #page11 img {
-            width: 80%;
-            max-width: 500px;
-            margin-top: 20px;
-        }
-
-        /* Kalimat di halaman terakhir */
-        #page11 p {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #333;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
@@ -194,7 +169,6 @@
     <!-- Halaman 3 -->
     <section id="page3" class="page">
         <div class="centered">
-            <p id="date-transition" class="message move-to-corner">14 Oktober 2024</p>
             <p class="message underline" onclick="nextPage()">Mutia Ulang Tahun?</p>
         </div>
         <div class="nav-arrows">
@@ -206,7 +180,6 @@
     <!-- Halaman 4 -->
     <section id="page4" class="page">
         <div class="centered">
-            <p id="date-transition" class="message move-to-corner">14 Oktober 2024</p>
             <p class="message underline" onclick="nextPage()">Wah, Mutia Ulang Tahun?!</p>
         </div>
         <div class="nav-arrows">
@@ -218,7 +191,6 @@
     <!-- Halaman 5 -->
     <section id="page5" class="page">
         <div class="centered">
-            <p id="date-transition" class="message move-to-corner">14 Oktober 2024</p>
             <p class="message underline" onclick="nextPage()">oke serius.</p>
         </div>
         <div class="nav-arrows">
@@ -230,7 +202,6 @@
     <!-- Halaman 6 -->
     <section id="page6" class="page">
         <div class="centered">
-            <p id="date-transition" class="message move-to-corner">14 Oktober 2024</p>
             <p class="message underline" onclick="nextPage()">Mutia's Birthday!</p>
         </div>
         <div class="nav-arrows">
@@ -242,7 +213,6 @@
     <!-- Halaman 7 -->
     <section id="page7" class="page">
         <div class="centered">
-            <p id="date-transition" class="message move-to-corner">14 Oktober 2024</p>
             <p class="message">Selamat Ulang Tahun, Mutia!</p>
             <span class="emoji" onclick="nextPage()">📩</span>
         </div>
@@ -298,7 +268,7 @@
     <section id="page9" class="page">
         <div class="centered">
             <p>nih kado untuk kamu.</p>
-            <iframe id="video-frame" src="https://player.vimeo.com/video/1019171202" frameborder="0" allowfullscreen></iframe>
+            <iframe id="video-frame" src="https://streamable.com/e/8wxf3y" frameborder="0" allowfullscreen></iframe>
             <p class="underline" onclick="nextPage()">haha maaf ya😁</p>
         </div>
         <div class="nav-arrows">
@@ -312,19 +282,10 @@
         <div class="centered">
             <p>kadonya nanti pas kita main yaa.</p>
             <img src="https://i.scdn.co/image/ab67656300005f1f282e395b2013d5d44ce74241" alt="Foto Kado">
-            <p class="underline" onclick="nextPage()">tambahan, tolong kecilkan volumenya...</p>
         </div>
         <div class="nav-arrows">
             <span class="arrow" onclick="prevPage()">←</span>
             <span class="arrow" onclick="nextPage()">→</span>
-        </div>
-    </section>
-
-    <!-- Halaman Terakhir -->
-    <section id="page11" class="page">
-        <div class="centered">
-            <img src="https://pbs.twimg.com/media/GN_ZWnnboAAK3vn?format=jpg&name=large" alt="Foto Terakhir">
-            <p><strong>semangat ngelaprak dan nugas dari dosennya ya kak😇😇😇😇</strong></p>
         </div>
     </section>
 
@@ -338,16 +299,10 @@
         <source src="https://od.lk/s/M18zMDk1MDM4MjFf/only.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Lagu Earrape Halaman Terakhir -->
-    <audio id="earrape-music">
-        <source src="https://od.lk/s/M18zMDk1MDM5NjZf/earrape.mp3" type="audio/mpeg">
-    </audio>
-
     <script>
         let currentPage = 1;
         const birthdayMusic = document.getElementById('birthday-music');
         const onlyMusic = document.getElementById('only-music');
-        const earrapeMusic = document.getElementById('earrape-music');
         const videoFrame = document.getElementById('video-frame');
 
         function nextPage() {
@@ -368,7 +323,6 @@
                 birthdayMusic.currentTime = 5;  // Mulai dari detik ke-5
                 birthdayMusic.play();
                 onlyMusic.pause();
-                earrapeMusic.pause();
             }
 
             // Backsound halaman 8-10
@@ -387,12 +341,6 @@
             // Putar kembali musik di halaman 10
             if (currentPage === 10) {
                 onlyMusic.play();
-            }
-
-            // Lagu earrape hanya sekali di halaman terakhir
-            if (currentPage === 11) {
-                onlyMusic.pause();
-                earrapeMusic.play();
             }
         }
 
@@ -415,7 +363,6 @@
                     birthdayMusic.currentTime = 5;  // Mulai dari detik ke-5
                     birthdayMusic.play();
                     onlyMusic.pause();
-                    earrapeMusic.pause();
                 }
 
                 // Backsound halaman 8-10
